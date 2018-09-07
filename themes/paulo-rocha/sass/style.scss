@@ -1,0 +1,178 @@
+/*!
+Theme Name: Paulo Rocha
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: paulo-rocha
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL and is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+*/
+
+#wpadminbar {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Bootstrap
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Bootstrap
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600,700');
+$black: #333;
+$red: #ed1e25;
+$primary: $red;
+$font-family-sans-serif: "Open Sans", Arial sans-serif;
+@import "bootstrap/bootstrap";
+@import "carousel-fade";
+@import "animate";
+
+@mixin absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+}
+
+
+body {
+	margin-top: 90px;
+	color: $black;
+	font-weight: 300;
+	letter-spacing: .2px;
+}
+
+html {
+	margin-top: 0!important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 2.3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h5 {
+	font-size: 1.1rem;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.6;
+}
+
+strong {
+	font-weight: 700;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+@import "navbar";
+@import "home";
+
+.page-header {
+	text-align: center;
+	background: linear-gradient(180deg,rgba(206,26,26,1) 0%,rgba(150,0,0,1) 100%);
+	color: white;
+	margin-bottom: 30px;
+	opacity: 0;
+	.imgbg {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		background-image: url('img/bgcontato.svg');
+		background-position: bottom;
+		background-size: 100% 200px;
+		background-repeat: no-repeat;
+	}
+	h1 {
+		font-weight: 600;
+		font-size: 2.5rem;
+	}
+}
+
+.blog-post {
+	margin-bottom: 45px;
+}
+.blog-sidebar {
+	border-left: 1px solid #eee;
+	.sticky-top {
+		top: 90px;
+		opacity: 0;
+	}
+}
+
+.pagination-wrapper {
+	p {
+		color: #aaa;
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+	.numbers {
+		clear: both
+	}
+	a, span {
+		padding: 5px 12px;
+		border: 1px solid #eee;
+		margin: 6px;
+		margin-left: 0;
+	}
+	a:hover {
+		background: $red;
+		color: white;
+	}
+	span {
+		font-weight: 700;
+		background: #efefef;
+		border-color: #e0e0e0;
+		color: #888;
+	}
+}
+
+.fb-comments {
+	width: 100%;
+	> span {
+		display: block!important;
+		margin: 0 auto;
+		max-width: 100%;
+		iframe {
+			max-width: 100%;
+		}
+	}
+}
