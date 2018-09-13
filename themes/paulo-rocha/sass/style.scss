@@ -104,6 +104,7 @@ img {
 
 @import "navbar";
 @import "home";
+@import "footer";
 
 .page-header {
 	text-align: center;
@@ -127,6 +128,9 @@ img {
 
 .blog-post {
 	margin-bottom: 45px;
+	p {
+		font-size: 14px;
+	}
 }
 .blog-sidebar {
 	border-left: 1px solid #eee;
@@ -176,3 +180,92 @@ img {
 		}
 	}
 }
+
+.wpcf7-form-control:not(.wpcf7-submit) {
+	@extend .form-control;
+	background: #efefef;
+	border: none;
+	font-size: 14px;
+}
+.wpcf7-submit {
+	@extend .btn;
+	@extend .btn-primary;
+}
+.wpcf7 {
+	label {
+		margin-bottom: 10px;
+		width: 100%;
+	}
+}
+
+.wpcf7-form-control {
+	margin-top: 15px;
+}
+
+.contato-container {
+	background-image: url('img/bgcontato.svg');
+	background-position: bottom;
+	background-size: 100% 400px;
+	background-repeat: no-repeat;
+}
+
+.social-share {
+	position: absolute;
+  left: -25px;
+	ul {
+		padding-left: 0;
+		margin-left: 0;
+		.facebook {
+			background-color: #3b5998;
+		}
+		.twitter {
+			background-color: #1da1f2;
+		}
+		.pinterest {
+			background-color: #bd081c;
+		}
+		.linkedin {
+			background-color: #0077b5;
+		}
+		.google-plus {
+			background-color: #de5449;
+		}
+		li {
+			padding-left: 0;
+			list-style: none;
+			span {
+				position: relative;
+				height: 30px;
+				width: 30px;
+				display: inline-block;
+				i {
+					font-size: 10px;
+					color: #999;
+				}
+			}
+			i {
+				@include absolute-center;
+				color: white;
+			}
+			a {
+				position: relative;
+				height: 25px;
+		    width: 25px;
+		    font-size: 13px;
+				display: inline-block;
+				&:hover {
+					background: #252525;
+				}
+			}
+		}
+	}
+	@media all and (max-width: 575px) {
+		position: relative;
+		left: initial;
+		transform: none;
+		li {
+			display: inline;
+		}
+	}
+}
+

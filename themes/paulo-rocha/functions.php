@@ -105,7 +105,7 @@ add_action( 'after_setup_theme', 'paulo_rocha_content_width', 0 );
  */
 function paulo_rocha_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'paulo-rocha' ),
+		'name'          => esc_html__( 'Footer', 'paulo-rocha' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'paulo-rocha' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -204,3 +204,16 @@ function create_post_type() {
   // );
 }
 add_action( 'init', 'create_post_type' );
+
+function get_excerpt(){
+$permalink = get_the_permalink();
+$excerpt = get_the_content();
+$excerpt = preg_replace(" ([.*?])",'',$excerpt);
+$excerpt = strip_shortcodes($excerpt);
+$excerpt = strip_tags($excerpt);
+$excerpt = substr($excerpt, 0, 144);
+$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+$excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
+$excerpt = $excerpt.'... <a href="'.$permalink.'">leia mais</a>';
+return $excerpt;
+}

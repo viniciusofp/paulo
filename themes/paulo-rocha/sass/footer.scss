@@ -1,0 +1,27 @@
+footer {
+	padding-top: 45px;
+	padding-bottom: 60px;
+	background: #292929;
+	color: white;
+}
+
+
+.instagram-pics {
+	width: 300px;
+	border: 1px solid #202020;
+	padding-left: 0;
+	li {
+		padding-left: 0;
+		margin-left: 0;
+		display: inline;
+		list-style: none;
+		width: 33.3333%;
+		img {
+			opacity: .3;
+			transition: .3s;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}

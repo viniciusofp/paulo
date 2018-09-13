@@ -24,7 +24,7 @@ get_header();
 				<?php 
 				$images = get_field('slider');
 				if( $images ): ?>
-				<div id="homeCarousel" class="carousel slide" data-ride="carousel">
+				<div id="homeCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
 				  <ol class="carousel-indicators">
 				  	<?php
 		        $activeClass = 'active';
