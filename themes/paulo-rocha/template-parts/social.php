@@ -1,4 +1,7 @@
-<div class="social-share">
+<?php if (has_post_thumbnail()): 
+	$classSocial = 'transformTop';
+endif ?>
+<div class="social-share <?php echo $classSocial ?>">
 	<ul>
 		<li><span><i class="fas fa-share"></i></span></li>
 		<li><a class="popup-share facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink() ?>"><i class="fab fa-facebook-f"></i></a></li>

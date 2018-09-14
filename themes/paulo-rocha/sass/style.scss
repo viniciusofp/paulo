@@ -212,9 +212,15 @@ img {
 .social-share {
 	position: absolute;
   left: -25px;
+  &.transformTop {
+  	transform: translateY(-100%);
+  	-moz-transform: translateY(-100%);
+  	-webkit-transform: translateY(-100%);
+  }
 	ul {
 		padding-left: 0;
 		margin-left: 0;
+		margin-bottom: 0;
 		.facebook {
 			background-color: #3b5998;
 		}
