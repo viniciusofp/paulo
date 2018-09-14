@@ -15,10 +15,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 */
 
-#wpadminbar {
-	display: none;
-}
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -53,6 +49,10 @@ body {
 	color: $black;
 	font-weight: 300;
 	letter-spacing: .2px;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -269,3 +269,17 @@ img {
 	}
 }
 
+
+.page-videos {
+	.video {
+		margin-bottom: 30px;
+		overflow: hidden;
+		img {
+			cursor: pointer;
+			transition: .3s;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}

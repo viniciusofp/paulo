@@ -20,7 +20,7 @@ get_header();
 
 <?php get_template_part('template-parts/content', 'page-header') ?>
 
-<div class="container">
+<div class="container pb-3">
 	<div class="row">
 	<?php 
 	$images = get_field('galeria');

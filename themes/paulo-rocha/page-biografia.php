@@ -20,7 +20,7 @@ get_header();
 
 <?php get_template_part('template-parts/content', 'page-header') ?>
 
-<div class="container">
+<div class="container pb-5">
 	<div class="row">
 		<div class="col-12 col-lg-4 col-xl-5 mb-4 text-center">
 			<?php the_post_thumbnail(); ?>
