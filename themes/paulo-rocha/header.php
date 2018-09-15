@@ -67,6 +67,8 @@
 		var lastScrollTop = 0;
 		window.addEventListener('load', function () {
 			$(window).scroll(function(event){
+
+			  if ($(document).scrollTop() >= 60) {
 			   var st = $(this).scrollTop();
 			   if (st > lastScrollTop){
 			       $('nav.navbar').addClass('smallNav');
@@ -74,6 +76,8 @@
 			      $('nav.navbar').removeClass('smallNav');
 			   }
 			   lastScrollTop = st;
+			  }
+
 			});
 			// var navbarWaypoint = $('body').waypoint(function(direction) {
 			// 	if (direction == 'down') {
