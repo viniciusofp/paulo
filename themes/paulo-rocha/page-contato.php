@@ -22,7 +22,7 @@ get_header();
 <div class="contato-container">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="d-none d-lg-flex col-lg-7 align-self-end">
+			<div class="text-center  col-12 col-lg-7 align-self-end">
 				<img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>" alt="">
 			</div>
 			<div class="col-12 col-lg-5 py-5">
