@@ -64,7 +64,10 @@ footer {
 		height: auto;
 	}
 	a {
-		color: white
+		color: white;
+		&:hover {
+			color: #ededed;
+		}
 	}
 }
 

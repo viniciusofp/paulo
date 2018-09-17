@@ -31,9 +31,20 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
+<!-- 	Social Bar -->
+	<div class="social-bar">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-right">
+					<?php get_template_part('template-parts/social-media') ?>
+				</div>
+			</div>
+		</div>
+	</div>
 <!-- Navbar -->
 
-	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+
 		<div class="container">
 			<!-- Get the URL of custom logo -->
 			<?php 
@@ -68,7 +79,7 @@
 		window.addEventListener('load', function () {
 			$(window).scroll(function(event){
 
-			  if ($(document).scrollTop() >= 60) {
+
 			   var st = $(this).scrollTop();
 			   if (st > lastScrollTop){
 			       $('nav.navbar').addClass('smallNav');
@@ -76,7 +87,6 @@
 			      $('nav.navbar').removeClass('smallNav');
 			   }
 			   lastScrollTop = st;
-			  }
 
 			});
 			// var navbarWaypoint = $('body').waypoint(function(direction) {

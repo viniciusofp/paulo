@@ -69,3 +69,20 @@ nav {
 	padding: 0;
 	border: 0;
 }
+
+.social-bar {
+	width: 100%;
+	background: $primary;
+	text-align: right;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	ul {
+		margin-bottom: 0;
+	}
+	a {
+		color: white;
+		&:hover {
+			color: #ededed;
+		}
+	}
+}
