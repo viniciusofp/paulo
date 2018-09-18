@@ -30,6 +30,7 @@ get_header();
 		<?php while( have_rows('videos') ): the_row(); 
 			// vars
 			$video = get_sub_field('video');
+			$legenda = get_sub_field('legenda');
 
 			?>
 			<div class="col-6 col-md-3 video">
@@ -41,7 +42,8 @@ get_header();
 				$arr = explode("?", $arr[1], 2);
 				$videoID = $arr[0];
 				$videoThumb = 'https://img.youtube.com/vi/' . $videoID. '/mqdefault.jpg'; ?>
-				<img src="<?php echo $videoThumb; ?>" alt="" class="img-fluid modalTrigger" data-src="<?php echo $src ?>&modestbranding=1&autoplay=1" data-toggle="modal" data-target="#exampleModal">
+				<img src="<?php echo $videoThumb; ?>" alt="" class="img-fluid modalTrigger mb-2" data-src="<?php echo $src ?>&modestbranding=1&autoplay=1" data-toggle="modal" data-target="#exampleModal">
+				<p><?php echo $legenda ?></p>
 			</div>
 		<?php endwhile; ?>
 	<?php endif; ?>
