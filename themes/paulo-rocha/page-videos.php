@@ -24,6 +24,9 @@ get_header();
 	<div class="row">
 
 	<?php if( have_rows('videos') ): ?>
+		<div class="col-12">
+			<h2 class="mb-4 text-primary">Vídeos</h2>
+		</div>
 		<?php while( have_rows('videos') ): the_row(); 
 			// vars
 			$video = get_sub_field('video');
@@ -43,10 +46,32 @@ get_header();
 		<?php endwhile; ?>
 	<?php endif; ?>
 
+	<?php if( have_rows('arquivos') ): ?>
+		<div class="col-12">
+			<h2 class="mb-4 mt-3 text-primary">Arquivos</h2>
+		</div>
+		<?php while( have_rows('arquivos') ): the_row(); 
+			// vars
+			$image = get_sub_field('arquivo');
+
+			?>
+			<div class="col-6 col-md-3 arquivo">
+					<button class="preview btn btn-primary" data-id="media-<?php echo $image['ID'];?>">Visualizar</button>
+        	<iframe id="media-<?php echo $image['ID'];?>" data-src="<?php echo $image['url'];  ?>" alt="" frameborder="0">
+        	</iframe>
+					<h6><?php echo $image['title'];?></h6>
+					<?php if ($image['caption']): ?>
+						<p><?php echo $image['caption'];?></p>
+					<?php endif ?>
+          <a target="_blank" href="<?php echo $image['url']; ?>">
+          	<button class="btn btn-primary btn-sm mr-2">DOWNLOAD</button>
+          </a>
+          <small><?php echo $image['mime_type']; ?></small>
+			</div>
+		<?php endwhile; ?>
+	<?php endif; ?>
 	</div>
 </div>
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -60,7 +85,19 @@ get_header();
 
 <script>
 window.addEventListener('load', function () {
-	// $('#exampleModal').modal('handleUpdate');
+
+	// Preview
+	$('button.preview').click(function() {
+		var mediaID = $(this).attr('data-id');
+		var iframe = $('#'+mediaID)
+		var iframeURL = iframe.attr('data-src')
+		console.log(iframeURL)
+		iframe.attr('src', iframeURL)
+		$(this).fadeOut();
+	})
+
+
+	// Modal
 	$('.modalTrigger').click(function() {
  		var src = $(this).attr('data-src');
  		$('#exampleModal iframe').attr('src', src)

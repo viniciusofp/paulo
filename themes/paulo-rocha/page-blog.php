@@ -15,8 +15,10 @@
 get_header();
 ?>
 
+<?php get_template_part('template-parts/content', 'page-header') ?>
+
 <div class="container">
-	<div class="row pt-5">
+	<div class="row pt-3">
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		$blogArgs = array(

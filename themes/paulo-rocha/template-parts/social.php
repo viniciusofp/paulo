@@ -9,6 +9,7 @@ endif ?>
 		<li><a class="popup-share google-plus" target="_blank" href="http://plus.google.com/share?url=<?php the_permalink() ?>"><i class="fab fa-google-plus-g"></i></a></li>
 		<li><a class="popup-share pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink() ?>&description=&media=<?php the_post_thumbnail_url() ?>"><i class="fab fa-pinterest-p"></i></a></li>
 		<li><a class="popup-share linkedin" target="_blank" href="http://linkedin.com/shareArticle?mini=true&url=<?php the_permalink() ?>&title=<?php the_title() ?>"><i class="fab fa-linkedin-in"></i></a></li>
+		<li><a href="https://wa.me/?text=<?php the_title(); ?>%20-%20<?php the_permalink(); ?>" data-text="<?php the_title(); ?> - <?php the_permalink(); ?>" data-href="<?php the_permalink(); ?>" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
 	</ul>
 	<script>
 	window.addEventListener('load', function () {

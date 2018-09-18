@@ -99,17 +99,17 @@
 }
 
 .homeVideo {
-	background: linear-gradient(180deg,rgba(206,26,26,1) 0%,rgba(150,0,0,1) 100%);
+	background: $primary;
 	color: white;
 	.imgbg {
 		padding-top: 100px;
 		padding-bottom: 80px;
 		padding-left: 60px;
 		padding-right: 60px;
-		background-image: url('img/bgcontato.svg');
-		background-position: bottom;
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
+		// background-image: url('img/bgcontato.svg');
+		// background-position: bottom;
+		// background-size: 100% 100%;
+		// background-repeat: no-repeat;
 		@media all and (max-width: 991px) {
 			padding-left: 0;
 			padding-right: 0;
