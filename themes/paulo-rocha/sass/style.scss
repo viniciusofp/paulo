@@ -303,7 +303,7 @@ img {
 		left: 50%;
 		top: 80px;
 		transform: translate(-50%, -50%);
-		background-color: transparent;
+		background-color: #fff9;
 		border-color: transparent;
 		color: #888
 	}
@@ -321,5 +321,12 @@ img {
 	}
 	.btn-sm {
 		font-size: 12px;
+	}
+	.file-thumb {
+		width: 100%;
+		height: 160px;
+		background-size: cover;
+		background-position: center;
+		background-color: #eee;
 	}
 }

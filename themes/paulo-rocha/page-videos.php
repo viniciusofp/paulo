@@ -55,12 +55,12 @@ get_header();
 		<?php while( have_rows('arquivos') ): the_row(); 
 			// vars
 			$image = get_sub_field('arquivo');
+			$thumb = get_sub_field('thumbnail');
 
 			?>
 			<div class="col-6 col-md-3 arquivo">
 					<button class="preview btn btn-primary" data-id="media-<?php echo $image['ID'];?>"  data-src="<?php echo $image['url'];  ?>" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
-        	<iframe id="media-<?php echo $image['ID'];?>" data-src="<?php echo $image['url'];  ?>" alt="" frameborder="0">
-        	</iframe>
+        	<div class="file-thumb mb-3" style="background-image: url('<?php echo $thumb ?>')"></div>
 					<h6><?php echo $image['title'];?></h6>
 					<?php if ($image['caption']): ?>
 						<p><?php echo $image['caption'];?></p>
@@ -90,9 +90,9 @@ window.addEventListener('load', function () {
 
 	// Preview
 	$('button.preview').click(function() {
-		var mediaID = $(this).attr('data-id');
-		var iframe = $('#'+mediaID)
-		var iframeURL = iframe.attr('data-src')
+		// var mediaID = $(this).attr('data-id');
+		// var iframe = $('#'+mediaID)
+		// var iframeURL = iframe.attr('data-src')
 		// console.log(iframeURL)
 		// iframe.attr('src', iframeURL)
 		// $(this).fadeOut();
