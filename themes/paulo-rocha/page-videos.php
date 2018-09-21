@@ -58,14 +58,14 @@ get_header();
 
 			?>
 			<div class="col-6 col-md-3 arquivo">
-					<button class="preview btn btn-primary" data-id="media-<?php echo $image['ID'];?>">Visualizar</button>
+					<button class="preview btn btn-primary" data-id="media-<?php echo $image['ID'];?>"  data-src="<?php echo $image['url'];  ?>" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
         	<iframe id="media-<?php echo $image['ID'];?>" data-src="<?php echo $image['url'];  ?>" alt="" frameborder="0">
         	</iframe>
 					<h6><?php echo $image['title'];?></h6>
 					<?php if ($image['caption']): ?>
 						<p><?php echo $image['caption'];?></p>
 					<?php endif ?>
-          <a target="_blank" href="<?php echo $image['url']; ?>">
+          <a target="_blank" href="<?php echo $image['url']; ?>" download>
           	<button class="btn btn-primary btn-sm mr-2">DOWNLOAD</button>
           </a>
           <small><?php echo $image['mime_type']; ?></small>
@@ -93,9 +93,12 @@ window.addEventListener('load', function () {
 		var mediaID = $(this).attr('data-id');
 		var iframe = $('#'+mediaID)
 		var iframeURL = iframe.attr('data-src')
-		console.log(iframeURL)
-		iframe.attr('src', iframeURL)
-		$(this).fadeOut();
+		// console.log(iframeURL)
+		// iframe.attr('src', iframeURL)
+		// $(this).fadeOut();
+
+ 		var src = $(this).attr('data-src');
+ 		$('#exampleModal iframe').attr('src', src)
 	})
 
 
